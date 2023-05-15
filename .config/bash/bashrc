@@ -1,22 +1,18 @@
 #!/bin/bash
 
 # User specific environment
-if ! [[ "$PATH" =~ "${HOME}/.local/bin" ]]; then
-    export PATH="${HOME}/.local/bin:${PATH}"
-fi
+# if ! [[ "$PATH" =~ "${HOME}/.local/bin" ]]; then
+#     export PATH="${HOME}/.local/bin:${PATH}"
+# fi
 
 # Set XDG home directories
-export XDG_DATA_HOME="${HOME}/.local/share"
-export XDG_STATE_HOME="${HOME}/.local/state"
-export XDG_CONFIG_HOME="${HOME}/.config"
-export XDG_CACHE_HOME="${HOME}/.cache"
+# export XDG_CACHE_HOME="${HOME}/.cache"
+# export XDG_CONFIG_HOME="${HOME}/.config"
+# export XDG_DATA_HOME="${HOME}/.local/share"
+# export XDG_STATE_HOME="${HOME}/.local/state"
 
-bash_config_dir="${XDG_CONFIG_HOME}/bash"
+bash_config_dir="${HOME}/.config/bash"
 bashrc_dir="${bash_config_dir}/bashrc.d"
-
-source "${bash_config_dir}/history"
-source "${bash_config_dir}/prompt"
-source "${bash_config_dir}/alias"
 
 # User specific bashrc.d
 if [[ -d ${bashrc_dir} ]]; then
@@ -42,4 +38,3 @@ fi
 unset bash_config_dir
 unset bashrc_dir
 unset bashrc_dir_self
-

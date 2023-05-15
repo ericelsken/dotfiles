@@ -1,0 +1,11 @@
+#!/bin/bash
+
+function stderr () {
+	echo >&2 "dotfiles-init: ${[@]}"
+	exit 
+}
+
+if [[ ! -d ~/.ssh/ ]]; then
+	stderr "could not verify SSH key is installed to clone directory"
+	exit 1
+fi

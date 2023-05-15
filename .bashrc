@@ -1,28 +1,14 @@
 # .bashrc
 
 # Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+if [[ -f /etc/bashrc ]]; then
+	source /etc/bashrc
 fi
 
-# User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
-then
-    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+bashrc_file="${HOME}/.config/bash/bashrc"
+if [[ -f "${bashrc_file}" ]]; then
+	source "${bashrc_file}"
+else
+	echo >&2 ".bashrc could not find ${bashrc_file}"
 fi
-export PATH
-
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
-# User specific aliases and functions
-if [ -d ~/.bashrc.d ]; then
-	for rc in ~/.bashrc.d/*; do
-		if [ -f "$rc" ]; then
-			. "$rc"
-		fi
-	done
-fi
-
-unset rc
-alias eeg='git --git-dir ${HOME}/.config/dotfiles --work-tree=${HOME}'
+unset bashrc_file

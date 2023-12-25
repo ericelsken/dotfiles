@@ -1,0 +1,6 @@
+#!/bin/bash
+
+/usr/bin/git \
+	--git-dir "${HOME}/.config/e2/dotfiles/" \
+	--work-tree "${HOME}" \
+	"${@}"

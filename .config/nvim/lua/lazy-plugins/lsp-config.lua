@@ -3,7 +3,7 @@ local M = {
 		"williamboman/mason.nvim",
 		config = function()
 			require("mason").setup()
-		end
+		end,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
@@ -25,7 +25,7 @@ local M = {
 			lspconfig.gopls.setup({})
 			lspconfig.lua_ls.setup({})
 			lspconfig.terraformls.setup({})
-		end
+		end,
 	},
 }
 

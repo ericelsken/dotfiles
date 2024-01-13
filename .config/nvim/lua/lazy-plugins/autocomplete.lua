@@ -50,10 +50,10 @@ local M = {
 					fields = { "menu", "abbr", "kind" },
 					format = function(entry, item)
 						local menu_icon = {
-							nvim_lsp = "λ",
-							vsnip = ">",
-							buffer = "b",
-							path = "p",
+							nvim_lsp = "L",
+							vsnip = "S",
+							buffer = "B",
+							path = "P",
 						}
 						item.menu = menu_icon[entry.source.name]
 						return item

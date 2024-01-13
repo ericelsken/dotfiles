@@ -6,6 +6,11 @@ local M = {
 		configs.setup({
 			ensure_installed = {
 				"bash",
+				"git_config",
+				"git_rebase",
+				"gitattributes",
+				"gitcommit",
+				"gitignore",
 				"json",
 				"lua",
 				"vim",

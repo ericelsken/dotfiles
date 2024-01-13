@@ -23,28 +23,11 @@ local function listedNamedBuffers()
 	return buffers
 end
 
--- vim.api.nvim_create_autocmd({ "BufEnter" }, {
--- 	group = vim.api.nvim_create_augroup("EgoElkVimEnter", {}),
--- 	callback = function()
--- 		local buffers = listedNamedBuffers()
--- 		local openTree = true
--- 		if #buffers > 0 then
--- 			if vim.api.nvim_buf_get_option(buffers[1], "filetype") == "gitcommit" then
--- 				openTree = false
--- 			end
--- 		end
--- 		if openTree then
--- 			vim.cmd("NERDTree")
--- 			vim.cmd("wincmd p")
--- 		end
--- 	end,
--- })
-
 vim.api.nvim_create_autocmd({ "VimEnter" }, {
 	group = vim.api.nvim_create_augroup("EgoElkVimEnter", {}),
 	callback = function()
 		local buffers = listedNamedBuffers()
-		local openTree = true
+		local openTree = false
 		if #buffers > 0 then
 			if vim.api.nvim_buf_get_option(buffers[1], "filetype") == "gitcommit" then
 				openTree = false

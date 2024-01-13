@@ -2,8 +2,11 @@ local M = {
 	{
 		"folke/trouble.nvim",
 		config = function()
-			vim.keymap.set("n", "<Leader>X", ":TroubleToggle<CR>", { remap = false, desc = "<Leader>[X] for Trouble" })
-		end
+			local trouble = require("trouble")
+			trouble.setup({})
+
+			vim.keymap.set("n", "<Leader>X", trouble.toggle, { desc = "<Leader>[X] for Trouble" })
+		end,
 	},
 }
 
